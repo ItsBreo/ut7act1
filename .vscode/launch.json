@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Act1Application<act1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "josue.mascotas.act1.Act1Application",
+            "projectName": "act1",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

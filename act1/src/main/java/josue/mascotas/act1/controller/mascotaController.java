@@ -8,6 +8,7 @@ import josue.mascotas.act1.model.mascota;
 import josue.mascotas.act1.service.mascotaService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController // Marca esta clase como un controlador REST que manejará las solicitudes HTTP
 @RequestMapping("/api/v1/mascotas") // Define la URL base para todas las rutas en este controlador
@@ -23,10 +24,8 @@ public class mascotaController {
     
     // Mapeamos la solicitud GET a /api/v1/mascotas/{id} para obtener una mascota por ID
     @GetMapping("/{id}")
-    public ResponseEntity<mascota> obtenerPorId(@PathVariable Long id) {
-        return mascotaService.buscarPorId(id)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
+    public mascota obtenerPorId(@PathVariable Long id) {
+        return mascotaService.buscarPorId(id).orElse(null);
     }
 
     // Mapeamos la solicitud POST a /api/v1/mascotas para crear una nueva mascota

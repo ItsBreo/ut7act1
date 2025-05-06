@@ -15,6 +15,7 @@ public class mascotaService {
     @Autowired // Inyecta automáticamente el repositorio de Mascotas en este servicio
     private mascotaRepository mascotaRepository;
 
+
      // Método para listar todas las mascotas en la base de datos
     public List<mascota> listarTodas() {
         return mascotaRepository.findAll();
@@ -29,6 +30,7 @@ public class mascotaService {
         return mascotaRepository.save(mascota);
     }
 
+    
     // Método para actualizar las mascotas en la base de datos
     public mascota actualizar(Long id, mascota nuevaMascota) {
         return mascotaRepository.findById(id).map(m -> {
