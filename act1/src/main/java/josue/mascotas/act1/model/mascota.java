@@ -3,10 +3,10 @@ package josue.mascotas.act1.model;
 import jakarta.persistence.*;
 
 
-@Entity
+@Entity // Indica que esta clase es una entidad que se mapeará a una tabla de base de datos
 public class mascota {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // Marca como el atributo como la clave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // El valor se autoincrementa
     private long id;
     private String nombre;
     private String especie;
