@@ -36,13 +36,9 @@ public class mascotaController {
 
     // Mapeamos la solicitud PUT a /api/v1/mascotas/{id} para actualizar una mascota existente
     @PutMapping("/{id}")
-    public ResponseEntity<mascota> actualizar(@PathVariable Long id, @RequestBody mascota mascota) {
+    public mascota actualizar(@PathVariable Long id, @RequestBody mascota mascota) {
         mascota actualizada = mascotaService.actualizar(id, mascota);
-        if (actualizada != null) {
-            return ResponseEntity.ok(actualizada);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return actualizada;
     }
 
     // Mapeamos la solicitud DELETE a /api/v1/mascotas/{id} para eliminar una mascota por ID
