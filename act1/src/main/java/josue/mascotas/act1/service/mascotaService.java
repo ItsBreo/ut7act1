@@ -33,16 +33,14 @@ public class mascotaService {
     
     // Método para actualizar las mascotas en la base de datos
     public mascota actualizar(Long id, mascota nuevaMascota) {
-        return mascotaRepository.findById(id).map(m -> {
-            m.setNombre(nuevaMascota.getNombre());
-            m.setEspecie(nuevaMascota.getEspecie());
-            m.setEdad(nuevaMascota.getEdad());
-            m.setAdoptado(nuevaMascota.isAdoptado());
-            return mascotaRepository.save(m);
-        }).orElse(null);
+        nuevaMascota.setId(id); // Setear el ID de la mascota que se está actualizando
+        return mascotaRepository.save(nuevaMascota); // Guardar la mascota actualizada
     }
-    
-     // Método para eliminar una mascota por id en la base de datos
+    /**
+     * Elimina una mascota de la base de datos utilizando su ID.
+     * 
+     * @param id El identificador único de la mascota a eliminar.
+     */
     public void eliminar(Long id) {
         mascotaRepository.deleteById(id);
     }
