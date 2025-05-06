@@ -8,7 +8,6 @@ import josue.mascotas.act1.model.mascota;
 import josue.mascotas.act1.service.mascotaService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController // Marca esta clase como un controlador REST que manejará las solicitudes HTTP
 @RequestMapping("/api/v1/mascotas") // Define la URL base para todas las rutas en este controlador
